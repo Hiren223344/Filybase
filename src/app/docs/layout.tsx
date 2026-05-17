@@ -97,7 +97,7 @@ UserInfo: GET /api/auth/<projectId>/oauth/userinfo (Bearer <access_token>)
 Discovery: GET /api/auth/<projectId>/.well-known/openid-configuration
 
 ## Client SDK
-import { createFilyAuth } from '@filybase/auth/client'
+import { createFilyAuth } from '@frenix-labs/filybase/auth'
 const auth = createFilyAuth({ baseUrl: '/api/auth/<projectId>', anonKey: '...' })
 auth.signUp({ email, password, name }) → { data, error }
 auth.signIn({ email, password }) → { data, error }

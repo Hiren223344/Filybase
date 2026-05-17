@@ -1,17 +1,17 @@
-# @filybase/sdk
+# @frenix-labs/filybase
 
 Official client SDK for [FilyBase](https://filybase.io) — Auth, Database, and Edge Functions in one package.
 
 ## Install
 
 ```bash
-npm install @filybase/sdk
+npm install @frenix-labs/filybase
 ```
 
 ## Quick Start
 
 ```ts
-import { createFilybase } from '@filybase/sdk'
+import { createFilybase } from '@frenix-labs/filybase'
 
 const fily = createFilybase({
   url: 'https://filybase.io/api',
@@ -80,7 +80,7 @@ const { data } = await fily.functions.invoke('send-email', {
 For browser apps with auto-refresh and session persistence:
 
 ```ts
-import { createFilyAuth } from '@filybase/sdk/auth'
+import { createFilyAuth } from '@frenix-labs/filybase/auth'
 
 const auth = createFilyAuth({
   baseUrl: 'https://filybase.io/api/auth/my-project',

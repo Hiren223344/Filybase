@@ -67,7 +67,7 @@ export default function AuthManagementPage() {
 
   const ago=(ts:number)=>{const d=Date.now()-ts;const m=Math.floor(d/60000);if(m<1)return'now';if(m<60)return m+'m';const h=Math.floor(m/60);if(h<24)return h+'h';return Math.floor(h/24)+'d';};
 
-  const sdk=`import { createFilyAuth } from '@filybase/auth/client'\n\nconst auth = createFilyAuth({\n  baseUrl: '${typeof window!=='undefined'?window.location.origin:''}/api/auth/${projectId}',\n  anonKey: '${config?.anonKey??'...'}'\n})\n\nconst { data } = await auth.signUp({ email: 'user@example.com', password: 'password123', name: 'Jane' })\nconst session = await auth.signIn({ email: 'user@example.com', password: 'password123' })\nconst user = await auth.getUser()\nawait auth.signOut()`;
+  const sdk=`import { createFilyAuth } from '@frenix-labs/filybase/auth'\n\nconst auth = createFilyAuth({\n  baseUrl: '${typeof window!=='undefined'?window.location.origin:''}/api/auth/${projectId}',\n  anonKey: '${config?.anonKey??'...'}'\n})\n\nconst { data } = await auth.signUp({ email: 'user@example.com', password: 'password123', name: 'Jane' })\nconst session = await auth.signIn({ email: 'user@example.com', password: 'password123' })\nconst user = await auth.getUser()\nawait auth.signOut()`;
 
   const copy=()=>{navigator.clipboard.writeText(sdk);setCopied(true);setTimeout(()=>setCopied(false),2000);};
 

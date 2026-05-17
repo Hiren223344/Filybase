@@ -1,5 +1,5 @@
 {
-  "name": "@filybase/sdk",
+  "name": "@frenix-labs/filybase",
   "version": "1.0.0",
   "description": "Official FilyBase client SDK — Auth, Database, and Edge Functions",
   "main": "dist/index.js",

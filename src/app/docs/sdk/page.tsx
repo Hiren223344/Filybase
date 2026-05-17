@@ -13,7 +13,7 @@ export default function SdkDocsPage() {
         <p className="text-sm text-zinc-400 mb-3">Copy <code className="text-emerald-400">src/lib/auth/client.ts</code> into your project, or import from the SDK tab in your dashboard.</p>
         <Code>{`import { createFilyAuth } from './filybase-auth-client'
 // or
-import { createFilyAuth } from '@filybase/auth/client'`}</Code>
+import { createFilyAuth } from '@frenix-labs/filybase/auth'`}</Code>
       </S>
 
       <S title="Initialize">
