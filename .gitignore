@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# auth data store
+/data
+
+# auth-server reference (not part of the app)
+/auth-server
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
