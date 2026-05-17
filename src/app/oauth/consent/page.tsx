@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ShieldCheck, X, Check } from '@phosphor-icons/react';
 
@@ -13,6 +13,14 @@ import { ShieldCheck, X, Check } from '@phosphor-icons/react';
  * Query params: ?project_id=...&client_id=...&redirect_uri=...&response_type=code&scope=...&state=...&code_challenge=...&code_challenge_method=S256
  */
 export default function OAuthConsentPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#121214] flex items-center justify-center text-white text-sm">Loading...</div>}>
+      <OAuthConsentInner />
+    </Suspense>
+  );
+}
+
+function OAuthConsentInner() {
   const searchParams = useSearchParams();
   const [status, setStatus] = useState<'loading' | 'ready' | 'approved' | 'denied' | 'error'>('loading');
   const [error, setError] = useState('');

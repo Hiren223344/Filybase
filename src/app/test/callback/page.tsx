@@ -1,8 +1,17 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 export default function OAuthCallbackPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#0a0a0b] flex items-center justify-center text-white text-sm">Loading...</div>}>
+      <CallbackInner />
+    </Suspense>
+  );
+}
+
+function CallbackInner() {
   const params = useSearchParams();
   const code = params.get('code');
   const state = params.get('state');
