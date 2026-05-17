@@ -7,9 +7,11 @@ if (!process.env.DATABASE_URL) {
   throw new Error("DATABASE_URL environment variable is required");
 }
 
+const isLocalhost = (process.env.DATABASE_URL || "").includes("localhost") || (process.env.DATABASE_URL || "").includes("127.0.0.1");
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: true } : { rejectUnauthorized: false },
+  ssl: isLocalhost ? false : { rejectUnauthorized: false },
   max: 20,
   min: 2,
   idleTimeoutMillis: 30000,
