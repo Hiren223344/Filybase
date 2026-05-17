@@ -42,6 +42,10 @@ yarn-error.log*
 # auth-server reference (not part of the app)
 /auth-server
 
+# SDK build artifacts
+/sdk/node_modules
+/sdk/dist
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

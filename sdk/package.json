@@ -1,0 +1,38 @@
+{
+  "name": "@filybase/sdk",
+  "version": "1.0.0",
+  "description": "Official FilyBase client SDK — Auth, Database, and Edge Functions",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./auth": {
+      "types": "./dist/auth.d.ts",
+      "import": "./dist/auth.mjs",
+      "require": "./dist/auth.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup src/index.ts src/auth.ts --format cjs,esm --dts --clean",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["filybase", "auth", "database", "sdk", "backend", "oauth", "edge-functions"],
+  "author": "FilyBase Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hiren223344/Filybase.git",
+    "directory": "sdk"
+  },
+  "homepage": "https://filybase.io/docs",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
